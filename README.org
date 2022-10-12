@@ -1,4 +1,4 @@
-#+title: README
+#+title: Neovim Configuration
 
 * Neovim 完全使用 lua 的基础配置
  从 =~/.config/nvim/init.lua= 加载用户配置
@@ -28,4 +28,4 @@
 + 按键逻辑优化
 + vim.notify 美化
 * Showcase
-[[file:doc/capture/desktop.png][simple desktop]]
+[[images:doc/capture/desktop.png][simple desktop]]

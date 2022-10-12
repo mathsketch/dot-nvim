@@ -1,0 +1,31 @@
+#+title: README
+
+* Neovim 完全使用 lua 的基础配置
+ 从 =~/.config/nvim/init.lua= 加载用户配置
+** 一些已经完成的功能
++ 基本的自动补全
+  - vim cmd 的命令提示
+  - buffer 内容的提示
+  - source code 提示
+  - 路径补全
++ 简单美化
+  - lualine
+  - bufferline (barbar.nvim)
++ 窗口和 buffer 管理
+  - 基本的窗口分割，布局调整([[github:sindrets/winshift.nvim][winshift.nvim]])
+  - focus 焦点窗口，自动调整窗口尺寸
++ LSP 的简单支持
++ 点单的文件管理与 LF 集成
++ 模糊搜索
+
+** 待完善的功能
++ snippet 支持
++ 更好的插件管理
++ 自动命令组和命令管理
++ LSP 的配置优化
++ ui 精细调整
++ git 集成
++ 按键逻辑优化
++ vim.notify 美化
+* Showcase
+[[file:doc/capture/desktop.png][simple desktop]]

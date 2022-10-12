@@ -1,0 +1,44 @@
+local module = {}
+
+-- module.package = {
+--     'windwp/windline.nvim',
+--     config = function()
+--         require('wlsample.bubble')
+--     end
+-- }
+
+module.package = {
+  'nvim-lualine/lualine.nvim',
+  requires = { 'nvim-lua/lsp-status.nvim' },
+  config = function()
+    require('lualine').setup {
+      options = {
+        theme = 'gruvbox',
+        component_separators = '|',
+        section_separators = { left = '', right = '' },
+      },
+      sections = {
+        lualine_a = { 'mode' },
+        lualine_b = { 'branch', 'diff', 'diagnostics' },
+        lualine_c = { 'filename' },
+        lualine_x = { 'require("lsp-status").status()', 'encoding', 'fileformat', 'filetype' },
+        lualine_y = { 'progress' },
+        lualine_z = { 'location' }
+      },
+      inactive_sections = {
+        lualine_a = {},
+        lualine_b = {},
+        lualine_c = { 'filename' },
+        lualine_x = { 'location' },
+        lualine_y = {},
+        lualine_z = {}
+      },
+      tabline = {},
+      winbar = {},
+      inactive_winbar = {},
+      extensions = {}
+    }
+  end,
+}
+
+return module

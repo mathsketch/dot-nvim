@@ -28,4 +28,4 @@
 + 按键逻辑优化
 + vim.notify 美化
 * Showcase
-[[images:doc/capture/desktop.png][simple desktop]]
+[[file:doc/capture/desktop.png][simple desktop]]

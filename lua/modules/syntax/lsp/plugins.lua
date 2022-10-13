@@ -35,10 +35,17 @@ local config = function()
   vim.diagnostic.config({
     virtual_text = true,
     signs = true,
+    float = {
+      show_header = false,
+      border = 'rounded',
+    },
     underline = true,
     update_in_insert = false,
     severity_sort = false,
   })
+  vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded" })
+  vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = "rounded" })
+
   local diagnostics_icons = {
     -- DiagnosticSignError = '',
     -- DiagnosticSignWarn = '',
@@ -50,7 +57,7 @@ local config = function()
     DiagnosticSignHint = '',
   }
   for name, icon in pairs(diagnostics_icons) do
-    vim.fn.sign_define(name, {text = icon, texthl = name})
+    vim.fn.sign_define(name, { text = icon, texthl = name })
   end
 
   local lsp = require('lspconfig')
@@ -73,7 +80,7 @@ local config = function()
 
   -- lspinfo ui config
   require('lspconfig.ui.windows').default_options.border = vim.g.floating_style == 'has_border' and 'rounded' or 'none'
-  vim.api.nvim_set_hl(0,'LspInfoBorder', {link = 'FloatBorder'})
+  vim.api.nvim_set_hl(0, 'LspInfoBorder', { link = 'FloatBorder' })
 
   lsp.pyright.setup {
     on_attach = on_attach,

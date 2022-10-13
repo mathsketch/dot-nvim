@@ -15,6 +15,7 @@ local keymaps = {
     { 'o', '<CMD>Telescope vim_options<CR>', name = 'search vim options' },
     { 'l', '<CMD>Telescope highlights<CR>', name = 'search highlights' },
     { 's', '<CMD>Telescope colorscheme<CR>', name = 'search colorscheme' },
+    { 'k', '<CMD>Telescope keymaps<CR>', name = 'search keymaps' },
   },
   {
     '<LEADER>s',

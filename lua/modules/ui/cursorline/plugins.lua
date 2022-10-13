@@ -13,14 +13,17 @@ module.package = {
         'Trouble',
       },
     }
-    vim.api.nvim_create_autocmd({'VimEnter', 'ColorScheme'}, {
+    local set_word_hl = function()
+      local set_hl = vim.api.nvim_set_hl
+      set_hl(0, 'IlluminatedWordText', { bg = vim.fn.synIDattr(vim.fn.hlID('GruvboxBg2'), 'fg') })
+      set_hl(0, 'IlluminatedWordRead', { bg = vim.fn.synIDattr(vim.fn.hlID('GruvboxBg2'), 'fg') })
+      set_hl(0, 'IlluminatedWordWrite', { bg = vim.fn.synIDattr(vim.fn.hlID('GruvbovBg2'), 'fg') })
+    end
+    set_word_hl()
+
+    vim.api.nvim_create_autocmd({ 'ColorScheme' }, {
       group = vim.api.nvim_create_augroup('illuminate_group', { clear = true }),
-      callback = function()
-        local set_hl = vim.api.nvim_set_hl
-        set_hl(0, 'IlluminatedWordText', { bg = vim.fn.synIDattr(vim.fn.hlID('GruvboxBg2'), 'fg') })
-        set_hl(0, 'IlluminatedWordRead', { bg = vim.fn.synIDattr(vim.fn.hlID('GruvboxBg2'), 'fg') })
-        set_hl(0, 'IlluminatedWordWrite', { bg = vim.fn.synIDattr(vim.fn.hlID('GruvbovBg2'), 'fg') })
-      end
+      callback = set_word_hl
     })
   end,
   event = 'BufReadPost',

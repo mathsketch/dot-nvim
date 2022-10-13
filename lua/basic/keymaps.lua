@@ -113,13 +113,13 @@ km.transform = function(tbl, settings)
   local desc = tbl[4] or tbl.name
   merged_settings.opts.desc = desc
 
-  if merged_settings.display ~= false then
-    table.insert(km.keymaps_legendary,
-      { lhs, mode = merged_settings.mode, description = desc, opts = merged_settings.opts })
-    -- if type(rhs) == 'string' then
-    --     table.insert(km.keymaps_mapper, {mode, lhs, rhs, opts, 'Map', name, name})
-    -- end
-  end
+  -- if merged_settings.display ~= false then
+  --   table.insert(km.keymaps_legendary,
+  --     { lhs, mode = merged_settings.mode, description = desc, opts = merged_settings.opts })
+  --   -- if type(rhs) == 'string' then
+  --   --     table.insert(km.keymaps_mapper, {mode, lhs, rhs, opts, 'Map', name, name})
+  --   -- end
+  -- end
 
   if merged_settings.buffer then
     if not km.buffer_keymaps[merged_settings.buffer] then

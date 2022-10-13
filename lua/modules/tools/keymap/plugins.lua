@@ -45,6 +45,7 @@ module.package = {
         }
       }
     end,
+    opt = true,
   }
 }
 

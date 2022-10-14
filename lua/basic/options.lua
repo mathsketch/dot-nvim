@@ -90,3 +90,7 @@ vim.api.nvim_create_autocmd('FileType', {
     vim.keymap.set('', 'q', '<CMD>q<CR>', { buffer = true })
   end,
 })
+
+_G.pretty_print = function(var)
+  print(vim.inspect(var))
+end

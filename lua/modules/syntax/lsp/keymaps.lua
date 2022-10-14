@@ -1,6 +1,7 @@
 local function on_list(options)
   if #options.items == 1 then
     local item = options.items[1]
+    vim.cmd('e ' .. item.filename)
     return vim.api.nvim_win_set_cursor(0, {item.lnum, item.col - 1})
   end
   vim.fn.setqflist({}, ' ', options)

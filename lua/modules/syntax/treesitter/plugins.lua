@@ -6,6 +6,7 @@ module.package = {
     requires = {
       { 'nvim-treesitter/nvim-treesitter-textobjects', event = 'BufRead' },
       { 'RRethy/nvim-treesitter-textsubjects', event = 'BufRead' },
+      { 'p00f/nvim-ts-rainbow', event = 'BufRead' },
     },
     run = ':TSUpdate',
     config = function()
@@ -16,6 +17,14 @@ module.package = {
           enable = true,
           -- disable = { "c", "rust" },
           additional_vim_regex_highlighting = true,
+        },
+        rainbow = {
+          enable = true,
+          -- disable = { "jsx", "cpp" }, list of languages you want to disable the plugin for
+          extended_mode = true, -- Also highlight non-bracket delimiters like html tags, boolean or table: lang -> boolean
+          max_file_lines = 5000, -- Do not enable for files with more than n lines, int
+          -- colors = {}, -- table of hex strings
+          -- termcolors = {} -- table of colour name strings
         },
         incremental_selection = {
           enable = true,

@@ -62,6 +62,9 @@ local config = function()
 
   local lsp = require('lspconfig')
   local on_attach = function(client, bufnr)
+    -- Enable completion triggered by <c-x><c-o>
+    vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
+
     require('basic.keymaps').load_buffer_keymaps("lsp", bufnr)
     vim.api.nvim_create_autocmd("CursorHold", {
       buffer = bufnr,

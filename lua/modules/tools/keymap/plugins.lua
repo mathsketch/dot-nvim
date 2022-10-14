@@ -5,15 +5,20 @@ module.package = {
     "folke/which-key.nvim",
     config = function()
       local wk = require('which-key')
+
+      -- disable v operator
+      local presets = require("which-key.plugins.presets")
+      presets.operators["v"] = nil
+
       wk.setup {
         window = {
-          border = "single", -- none, single, double, shadow
+          border = "rounded",
         },
       }
 
       local keymaps = require('basic.keymaps')
       wk.register(keymaps.keymap_groups)
-    end
+    end,
   },
   {
     "lazytanuki/nvim-mapper",
